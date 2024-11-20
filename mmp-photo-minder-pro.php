@@ -3,7 +3,7 @@
  * Plugin Name: MMP Photo Minder Pro
  * Plugin URI: https://mmpro.dev/wp/plugins/photo-minder-pro
  * Description: Professional photo gallery management system with ACF Pro integration
- * Version: 1.0.2
+ * Version: 1.0.6
  * Author: Rob Moore
  * Author URI: https://mmpro.dev
  * License: GPL v2 or later
