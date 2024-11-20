@@ -1,0 +1,135 @@
+/* Import Page Styles */
+.mmp-import-container {
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+.mmp-import-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.mmp-import-section h2 {
+    margin-top: 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.mmp-import-section label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.mmp-import-section .regular-text {
+    width: 100%;
+    max-width: 500px;
+}
+
+.mmp-import-section .button {
+    margin-top: 10px;
+}
+
+/* Gallery Edit Screen */
+.acf-field-gallery {
+    background: #fff;
+}
+
+.acf-gallery-main {
+    min-height: 400px;
+}
+
+.acf-gallery-attachment {
+    position: relative;
+}
+
+.acf-gallery-attachment.ui-sortable-helper {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+/* Custom Fields Styling */
+.acf-field-group[data-name="gallery_settings"] {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-top: 20px;
+    background: #f9f9f9;
+}
+
+.acf-field-group[data-name="gallery_settings"] > .acf-label {
+    margin-bottom: 15px;
+}
+
+/* Help Text */
+.mmp-help-text {
+    background: #f8f9fa;
+    border-left: 4px solid #007cba;
+    padding: 12px;
+    margin: 20px 0;
+}
+
+.mmp-help-text h3 {
+    margin-top: 0;
+}
+
+.mmp-help-text ul {
+    margin-bottom: 0;
+}
+
+/* Import Progress */
+.mmp-import-progress {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-top: 15px;
+    display: none;
+}
+
+.mmp-import-progress.is-active {
+    display: block;
+}
+
+.mmp-progress-bar {
+    height: 20px;
+    background: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.mmp-progress-bar-fill {
+    height: 100%;
+    background: #007cba;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+/* Responsive Admin */
+@media screen and (max-width: 782px) {
+    .mmp-import-section {
+        padding: 15px;
+    }
+    
+    .mmp-import-section .regular-text {
+        max-width: 100%;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body.wp-admin-color-modern {
+        .mmp-import-section {
+            background: #23282d;
+            border-color: #32373c;
+        }
+        
+        .mmp-help-text {
+            background: #32373c;
+        }
+        
+        .mmp-import-progress {
+            background: #32373c;
+        }
+    }
+}

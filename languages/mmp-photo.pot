@@ -1,0 +1,212 @@
+# Copyright (C) 2024 Member Minder Pro, LLC
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: MMP Photo Minder Pro 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mmp-photo-minder-pro\n"
+"Last-Translator: Rob Moore <rob.moore@memberminderpro.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2024-03-20T10:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: mmp-photo\n"
+
+#: mmp-photo-minder-pro.php:56
+msgid "MMP Photo Minder Pro requires Advanced Custom Fields Pro to be installed and activated."
+msgstr ""
+
+#: includes/class-post-types.php:24
+msgid "Photo Galleries"
+msgstr ""
+
+#: includes/class-post-types.php:25
+msgid "Photo Gallery"
+msgstr ""
+
+#: includes/class-post-types.php:26
+msgid "Photo Minder"
+msgstr ""
+
+#: includes/class-post-types.php:28
+msgid "Add New Gallery"
+msgstr ""
+
+#: includes/class-post-types.php:29
+msgid "Add New Photo Gallery"
+msgstr ""
+
+#: includes/class-post-types.php:30
+msgid "Edit Gallery"
+msgstr ""
+
+#: includes/class-post-types.php:31
+msgid "New Gallery"
+msgstr ""
+
+#: includes/class-post-types.php:32
+msgid "View Gallery"
+msgstr ""
+
+#: includes/class-post-types.php:33
+msgid "Search Galleries"
+msgstr ""
+
+#: includes/class-post-types.php:34
+msgid "No galleries found"
+msgstr ""
+
+#: includes/class-post-types.php:35
+msgid "No galleries found in Trash"
+msgstr ""
+
+#: includes/class-widget.php:11
+msgid "Photo Minder Gallery"
+msgstr ""
+
+#: includes/class-widget.php:12
+msgid "Display a photo gallery in your sidebar"
+msgstr ""
+
+#: includes/class-widget.php:89
+msgid "Title:"
+msgstr ""
+
+#: includes/class-widget.php:98
+msgid "Display Mode:"
+msgstr ""
+
+#: includes/class-widget.php:104
+msgid "Single Gallery"
+msgstr ""
+
+#: includes/class-widget.php:107
+msgid "Gallery Grid"
+msgstr ""
+
+#: includes/class-widget.php:115
+msgid "Select Gallery:"
+msgstr ""
+
+#: includes/class-widget.php:121
+msgid "-- Select Gallery --"
+msgstr ""
+
+#: includes/class-widget.php:136
+msgid "Columns:"
+msgstr ""
+
+#: includes/class-widget.php:150
+msgid "Number of galleries to show:"
+msgstr ""
+
+#: includes/class-importers.php:25
+#: includes/class-importers.php:26
+msgid "Import Gallery"
+msgstr ""
+
+#: includes/class-importers.php:71
+msgid "Import from Google Photos"
+msgstr ""
+
+#: includes/class-importers.php:85
+msgid "Google Photos Album URL:"
+msgstr ""
+
+#: includes/class-importers.php:97
+msgid "Import from Google Photos"
+msgstr ""
+
+#: includes/class-importers.php:104
+msgid "Import from Apple Photos"
+msgstr ""
+
+#: includes/class-importers.php:118
+msgid "Upload Apple Photos Export (.zip):"
+msgstr ""
+
+#: includes/class-importers.php:130
+msgid "Import from Apple Photos"
+msgstr ""
+
+#: includes/class-importers.php:137
+msgid "Import from RSS Feed"
+msgstr ""
+
+#: includes/class-importers.php:151
+msgid "RSS Feed URL:"
+msgstr ""
+
+#: includes/class-importers.php:163
+msgid "Import from RSS Feed"
+msgstr ""
+
+#: includes/class-importers.php:187
+msgid "Security check failed"
+msgstr ""
+
+#: includes/class-importers.php:191
+msgid "Insufficient permissions"
+msgstr ""
+
+#: includes/class-importers.php:224
+msgid "Invalid Google Photos URL"
+msgstr ""
+
+#: includes/class-importers.php:234
+msgid "Could not extract album ID from URL"
+msgstr ""
+
+#: includes/class-importers.php:240
+msgid "No photos found in album"
+msgstr ""
+
+#: includes/class-importers.php:264
+msgid "No file uploaded"
+msgstr ""
+
+#: includes/class-importers.php:271
+msgid "Could not open zip file"
+msgstr ""
+
+#: includes/class-acf-fields.php:31
+msgid "Gallery Settings"
+msgstr ""
+
+#: includes/class-acf-fields.php:36
+msgid "Gallery Type"
+msgstr ""
+
+#: includes/class-acf-fields.php:41
+msgid "Grid Layout"
+msgstr ""
+
+#: includes/class-acf-fields.php:42
+msgid "Masonry Layout"
+msgstr ""
+
+#: includes/class-acf-fields.php:43
+msgid "Slider Layout"
+msgstr ""
+
+#. Plugin Name of the plugin
+msgid "MMP Photo Minder Pro"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://mmpro.dev/wp/plugins/photo-minder-pro"
+msgstr ""
+
+#. Description of the plugin
+msgid "Professional photo gallery management system with ACF Pro integration"
+msgstr ""
+
+#. Author of the plugin
+msgid "Rob Moore"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://mmpro.dev"
+msgstr ""
