@@ -55,7 +55,7 @@ define('MMPHOTO_MEMORY_LIMIT', '256M');
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/mmp-photo-minder-pro.git
+git clone https://github.com/memberminderpro/mmp-photo-minder-pro.git
 
 # Install dependencies
 composer install
@@ -107,40 +107,40 @@ See [LICENSE](LICENSE) for the complete license text.
 
 ### Reporting Security Issues
 
-Please report security issues privately to security@example.com. Please do not create public issues for security vulnerabilities.
-
-See our [Security Policy](.github/SECURITY.md) for more details.
+Please report security issues privately to security@emmpro.dev. Please do not create public issues for security vulnerabilities.
+<!-- 
+See our [Security Policy](.github/SECURITY.md) for more details. -->
 
 ## 🌟 Credits
 
-MMP Photo Minder Pro is developed and maintained by [Your Organization](https://example.com).
+MMP Photo Minder Pro is developed and maintained by [Member Minder Pro, LLC](https://memberminderpro.com).
 
-### Contributors
+<!-- ### Contributors
 
 Thank you to all our contributors:
-- [Contributor Name](https://github.com/username) - Feature implementation
+- [Contributor Name](https://github.com/akaienso) - Feature implementation
 - [Contributor Name](https://github.com/username) - Bug fixes
 - [Contributor Name](https://github.com/username) - Documentation
 
-See the full list of [contributors](https://github.com/your-org/mmp-photo-minder-pro/graphs/contributors).
+See the full list of [contributors](https://github.com/your-org/mmp-photo-minder-pro/graphs/contributors). -->
 
-## 📢 Support
+<!-- ## 📢 Support
 
 - 🌐 [Official Website](https://example.com)
 - 📚 [Documentation](https://example.com/docs)
 - 💬 [Community Forum](https://example.com/forum)
-- 📧 [Email Support](mailto:support@example.com)
+- 📧 [Email Support](mailto:support@example.com) -->
 
-## 🗺️ Roadmap
+<!-- ## 🗺️ Roadmap
 
 See our [project roadmap](https://github.com/your-org/mmp-photo-minder-pro/projects/1) for planned features and improvements.
 
 ## 📜 Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for a list of changes and release notes.
+See [CHANGELOG.md](CHANGELOG.md) for a list of changes and release notes. -->
 
 ---
 
 <div align="center">
-Made with ❤️ by [Your Organization]
+Made with ❤️ by [Member Minder Pro, LLC](https://memberminderpro.com)
 </div>

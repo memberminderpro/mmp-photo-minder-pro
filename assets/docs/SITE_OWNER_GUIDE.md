@@ -180,7 +180,7 @@ Contributor | ✗ | ✗ | ✗ | ✗
 ## Support Resources
 
 ### Official Channels
-- Support Email: support@example.com
+- Support Email: wp@mmpro.dev
 - Documentation: https://example.com/docs
 - Forums: https://example.com/forum
 
