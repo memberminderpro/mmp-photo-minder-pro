@@ -5,10 +5,13 @@
     function initMasonry() {
         $('.mmp-gallery[data-type="masonry"]').each(function() {
             var $gallery = $(this);
-            $gallery.masonry({
-                itemSelector: '.mmp-gallery-item',
-                columnWidth: '.mmp-gallery-item',
-                percentPosition: true
+            // Initialize Masonry after images are loaded
+            $gallery.imagesLoaded(function() {
+                $gallery.masonry({
+                    itemSelector: '.mmp-gallery-item',
+                    columnWidth: '.mmp-gallery-item',
+                    percentPosition: true
+                }).addClass('is-initialized');
             });
         });
     }
@@ -109,19 +112,114 @@
         });
     }
 
+    // Initialize grid layout
+    function initGrid() {
+        $('.mmp-gallery[data-type="grid"]').each(function() {
+            var $gallery = $(this);
+            var columns = $gallery.data('columns') || 3;
+            
+            $gallery.imagesLoaded(function() {
+                $gallery.addClass('is-initialized');
+            });
+        });
+    }
+
+    // Handle Slideshow Layout
+    function initSlideshow() {
+        $('.mmp-gallery[data-type="slider"]').each(function() {
+            var $gallery = $(this);
+            var autoplay = $gallery.data('autoplay') || false;
+            var speed = $gallery.data('speed') || 3000;
+
+            $gallery.imagesLoaded(function() {
+                $gallery.addClass('is-initialized').slick({
+                    dots: true,
+                    arrows: true,
+                    infinite: true,
+                    speed: 500,
+                    fade: true,
+                    cssEase: 'linear',
+                    autoplay: autoplay,
+                    autoplaySpeed: speed,
+                    adaptiveHeight: true
+                });
+            });
+        });
+    }
+
+    // Accessibility Enhancements
+    function initAccessibility() {
+        // Add aria labels
+        $('.mmp-gallery-item a').each(function() {
+            const $link = $(this);
+            const caption = $link.find('.mmp-gallery-caption').text();
+            if (caption) {
+                $link.attr('aria-label', caption);
+            }
+        });
+
+        // Add focus styles
+        $('.mmp-gallery-item a').on('focus', function() {
+            $(this).parent().addClass('is-focused');
+        }).on('blur', function() {
+            $(this).parent().removeClass('is-focused');
+        });
+
+        // Make lightbox keyboard accessible
+        $('.lb-nav a').attr('role', 'button').attr('tabindex', '0');
+    }
+
+    // Performance Monitoring
+    function monitorPerformance() {
+        const galleryLoadTime = window.performance.now();
+        console.log('Gallery load time:', galleryLoadTime + 'ms');
+
+        // Monitor image loading
+        $('.mmp-gallery img').each(function() {
+            const img = this;
+            const startTime = window.performance.now();
+            
+            if (img.complete) {
+                const loadTime = window.performance.now() - startTime;
+                console.log('Image loaded from cache:', loadTime + 'ms');
+            } else {
+                img.addEventListener('load', function() {
+                    const loadTime = window.performance.now() - startTime;
+                    console.log('Image loaded:', loadTime + 'ms');
+                });
+            }
+        });
+    }
+
     // Initialize everything when document is ready
     $(document).ready(function() {
-        initMasonry();
+        // Initialize layouts based on gallery type
+        $('.mmp-gallery').each(function() {
+            var $gallery = $(this);
+            var type = $gallery.data('type') || 'grid';
+
+            switch(type) {
+                case 'masonry':
+                    initMasonry();
+                    break;
+                case 'slider':
+                    initSlideshow();
+                    break;
+                default:
+                    initGrid();
+            }
+        });
+
         initLightbox();
         initLazyLoading();
         initKeyboardNav();
         initTouchSupport();
+        initAccessibility();
         addDownloadButton();
 
-        // Refresh masonry layout when all images are loaded
-        $('.mmp-gallery[data-type="masonry"]').imagesLoaded().done(function() {
-            initMasonry();
-        });
+        if (MMPhotoSettings.debug) {
+            monitorPerformance();
+        }
 
         // Handle window resize
         let resizeTimer;
@@ -129,6 +227,7 @@
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
                 $('.mmp-gallery[data-type="masonry"]').masonry('layout');
+                $('.mmp-gallery[data-type="slider"]').slick('setPosition');
             }, 250);
         });
     });

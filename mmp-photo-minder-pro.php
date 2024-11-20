@@ -3,7 +3,7 @@
  * Plugin Name: MMP Photo Minder Pro
  * Plugin URI: https://mmpro.dev/wp/plugins/photo-minder-pro
  * Description: Professional photo gallery management system with ACF Pro integration
- * Version: 1.0.0
+ * Version: 1.0.2
  * Author: Rob Moore
  * Author URI: https://mmpro.dev
  * License: GPL v2 or later
@@ -79,13 +79,56 @@ class MMPhotoMinderPro {
     }
 
     public function enqueue_frontend_assets() {
+        // Enqueue imagesLoaded library
+        wp_enqueue_script(
+            'images-loaded',
+            'https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js',
+            array('jquery'),
+            '5.0.0',
+            true
+        );
+    
+        // Enqueue masonry library
+        wp_enqueue_script(
+            'masonry',
+            'https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js',
+            array('jquery', 'images-loaded'),
+            '4.2.2',
+            true
+        );
+    
+        // Enqueue Slick Carousel
+        wp_enqueue_script(
+            'slick-carousel',
+            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js',
+            array('jquery'),
+            '1.8.1',
+            true
+        );
+    
+        wp_enqueue_style(
+            'slick-carousel-css',
+            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css',
+            array(),
+            '1.8.1'
+        );
+    
+        wp_enqueue_style(
+            'slick-carousel-theme',
+            'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css',
+            array('slick-carousel-css'),
+            '1.8.1'
+        );
+    
+        // Enqueue main styles
         wp_enqueue_style(
             'mmp-photo-styles', 
             MMPHOTO_PLUGIN_URL . 'assets/css/frontend.css',
-            array(),
+            array('slick-carousel-theme'),
             MMPHOTO_VERSION
         );
         
+        // Enqueue lightbox
         wp_enqueue_script(
             'mmp-photo-lightbox',
             'https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js',
@@ -101,12 +144,28 @@ class MMPhotoMinderPro {
             '2.11.3'
         );
         
+        // Enqueue our main script with all dependencies
         wp_enqueue_script(
             'mmp-photo-frontend',
             MMPHOTO_PLUGIN_URL . 'assets/js/frontend.js',
-            array('jquery', 'mmp-photo-lightbox'),
+            array('jquery', 'images-loaded', 'masonry', 'slick-carousel', 'mmp-photo-lightbox'),
             MMPHOTO_VERSION,
             true
+        );
+    
+        // Add localization for our script
+        wp_localize_script(
+            'mmp-photo-frontend',
+            'MMPhotoSettings',
+            array(
+                'ajaxurl' => admin_url('admin-ajax.php'),
+                'nonce' => wp_create_nonce('mmp_photo_nonce'),
+                'debug' => defined('WP_DEBUG') && WP_DEBUG,
+                'i18n' => array(
+                    'loading' => __('Loading...', 'mmp-photo'),
+                    'error' => __('Error loading gallery', 'mmp-photo')
+                )
+            )
         );
     }
 
